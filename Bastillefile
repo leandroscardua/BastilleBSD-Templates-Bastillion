@@ -1,4 +1,4 @@
 PKG bastillion
-CMD bash | sed -i '' -e "s:dbPassword=:dbPassword=$(dd if=/dev/urandom bs=1 count=10 | openssl base64):" /usr/local/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
+CMD sed -i '' -e "s:dbPassword=:dbPassword=$(dd if=/dev/urandom bs=1 count=10 | openssl base64):" /usr/local/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
 SYSRC bastillion_enable="YES"
 SERVICE bastillion start
